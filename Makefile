@@ -6,7 +6,7 @@
 #    By: edi-marc <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/08/03 13:49:29 by edi-marc          #+#    #+#              #
-#    Updated: 2021/08/04 17:45:42 by edi-marc         ###   ########.fr        #
+#    Updated: 2021/08/04 19:26:00 by edi-marc         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,11 @@ NAME = push_swap
 
 SRCS = push_swap.c
 
-LIBFT_DIR = Libft 
+OBJS = $(SRCS:.c=.o)
+
+LIBFT_DIR = Libft
+
+LIBFT = $(LIBFT_DIR)/libft.a
 
 CFLAGS = -Wall -Wextra -Werror
 
@@ -25,19 +29,23 @@ RM = /bin/rm -f
 all: $(NAME)
 
 $(LIBFT) :
-	$(MAKE) -C $(LIBFT_DIR)
+	$(MAKE) bonus -C $(LIBFT_DIR)
 
 $(NAME) : $(LIBFT)
 	$(CC) $(CFLAGS) -I$(LIBFT_DIR) -L$(LIBFT_DIR) -lft $(SRCS) -o $(NAME) 
 
 clean:
+	$(MAKE) clean -C $(LIBFT_DIR)
+	$(RM) $(OBJS)
 
-fclean:
+fclean: clean
+	$(MAKE) fclean -C $(LIBFT_DIR)
+	$(RM) $(NAME)
 
 bonus:
 
-re:
+re: fclean all
 
-bre:
+bre: fclean bonus
 
 .PHONY: all clean fclean bonus re bre

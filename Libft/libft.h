@@ -6,7 +6,7 @@
 /*   By: edi-marc <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/13 14:23:25 by edi-marc          #+#    #+#             */
-/*   Updated: 2021/08/04 18:46:16 by edi-marc         ###   ########.fr       */
+/*   Updated: 2021/08/05 12:23:38 by edi-marc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ typedef struct s_list
 }					t_list;
 
 int					ft_atoi(const char *str);
+long int			ft_atol(const char *str);
 void				*ft_memset(void *b, int c, size_t len);
 size_t				ft_strlen(const char *s);
 int					ft_strncmp(const char *s1, const char *s2, size_t n);

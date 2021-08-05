@@ -6,14 +6,32 @@
 /*   By: edi-marc <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/04 17:04:46 by edi-marc          #+#    #+#             */
-/*   Updated: 2021/08/04 17:23:35 by edi-marc         ###   ########.fr       */
+/*   Updated: 2021/08/05 12:16:11 by edi-marc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	main(void)
+static int	parsing_i(int argc, char **argv)
 {
-	write(1, "ciao", 4);
+	int	check;
+	check = 0;
+	while (argc == 1)
+	{
+		if (*argv[argc - 1])
+		argc--;
+	}
+	return (check);	
+}
+
+int	main(int argc, char **argv)
+{
+	if (parsing_i(argc, argv))
+	{
+
+	}
+	else
+		write(1,"Error\n", 6);
 	return (0);
 }
+

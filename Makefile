@@ -12,7 +12,10 @@
 
 NAME = push_swap
 
-SRCS = push_swap.c
+SRCS = operations.c utils.c init_cmd.c check.c max_subseq.c \
+	ft_push_swap.c enumerate_stack.c algo_part_two.c stack_align.c \
+	utils2.c operations1.c operations2.c utils3.c algo_part_two_2.c \
+	is_sort.c check_dup.c five_numbers.c three_numbers.c \
 
 OBJS = $(SRCS:.c=.o)
 

@@ -6,20 +6,17 @@
 #    By: edi-marc <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/08/03 13:49:29 by edi-marc          #+#    #+#              #
-#    Updated: 2021/08/04 19:26:00 by edi-marc         ###   ########.fr        #
+#    Updated: 2022/02/28 14:44:18 by edi-marc         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = push_swap
 
-SRCS = operations.c utils.c init_cmd.c check.c max_subseq.c \
-	ft_push_swap.c enumerate_stack.c algo_part_two.c stack_align.c \
-	utils2.c operations1.c operations2.c utils3.c algo_part_two_2.c \
-	is_sort.c check_dup.c five_numbers.c three_numbers.c \
+SRCS = $(wildcard *.c)
 
 OBJS = $(SRCS:.c=.o)
 
-LIBFT_DIR = Libft
+LIBFT_DIR = libft
 
 LIBFT = $(LIBFT_DIR)/libft.a
 

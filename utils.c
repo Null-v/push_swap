@@ -6,7 +6,7 @@
 /*   By: edi-marc <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/28 15:29:23 by edi-marc          #+#    #+#             */
-/*   Updated: 2022/02/28 15:29:28 by edi-marc         ###   ########.fr       */
+/*   Updated: 2022/03/02 09:16:03 by edi-marc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ int	ft_split_atoi(char *s, t_stack *a)
 	i = 0;
 	while (*s)
 	{
-		nb = ft_atoi(s);
+		nb = ft_atoi_s(s);
 		if (nb >= 3000000000)
 			return (0);
 		else

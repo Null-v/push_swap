@@ -6,7 +6,7 @@
 /*   By: edi-marc <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/28 14:49:27 by edi-marc          #+#    #+#             */
-/*   Updated: 2022/02/28 15:37:11 by edi-marc         ###   ########.fr       */
+/*   Updated: 2022/03/02 09:21:01 by edi-marc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,5 +45,6 @@ void	ft_swap(int *new, int *old);
 int		ft_d_count(char *s);
 void	ft_putstr(char *s);
 void	ft_putchar(char c);
+long	ft_atoi_s(const char *s);
 
 #endif

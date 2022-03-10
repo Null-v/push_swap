@@ -6,7 +6,7 @@
 #    By: edi-marc <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/08/03 13:49:29 by edi-marc          #+#    #+#              #
-#    Updated: 2022/02/28 14:44:18 by edi-marc         ###   ########.fr        #
+#    Updated: 2022/03/08 15:33:15 by edi-marc         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -29,23 +29,23 @@ RM = /bin/rm -f
 all: $(NAME)
 
 $(LIBFT) :
-	$(MAKE) bonus -C $(LIBFT_DIR)
+	@echo "[compiling libft...]"
+	@$(MAKE) bonus -C $(LIBFT_DIR)
 
 $(NAME) : $(LIBFT)
-	$(CC) $(CFLAGS) -I$(LIBFT_DIR) -L$(LIBFT_DIR) -lft $(SRCS) -o $(NAME) 
+	@echo "[push_swap compilation...]"
+	@$(CC) $(CFLAGS) -I$(LIBFT_DIR) -L$(LIBFT_DIR) -lft $(SRCS) -o $(NAME) 
 
 clean:
-	$(MAKE) clean -C $(LIBFT_DIR)
-	$(RM) $(OBJS)
+	@echo "[cleaning...]"	
+	@$(MAKE) clean -C $(LIBFT_DIR)
+	@$(RM) $(OBJS)
 
 fclean: clean
-	$(MAKE) fclean -C $(LIBFT_DIR)
-	$(RM) $(NAME)
-
-bonus:
+	@echo "[hard cleaning...]"
+	@$(MAKE) fclean -C $(LIBFT_DIR)
+	@$(RM) $(NAME)
 
 re: fclean all
 
-bre: fclean bonus
-
-.PHONY: all clean fclean bonus re bre
+.PHONY: all clean fclean re

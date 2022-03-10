@@ -6,11 +6,31 @@
 /*   By: edi-marc <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/28 15:25:05 by edi-marc          #+#    #+#             */
-/*   Updated: 2022/02/28 15:25:12 by edi-marc         ###   ########.fr       */
+/*   Updated: 2022/03/09 23:44:03 by edi-marc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+void	search_i(t_stack *a, t_stack *b, int i)
+{
+	int	n;
+
+	n = a->n;
+	while (n > 0 && a->i[n - 1] != i)
+		n--;
+	if (n > ((a->n) / 2))
+	{
+		while (a->i[0] != i)
+			rra(a);
+	}
+	else
+	{
+		while (a->i[0] != i)
+			ra(a);
+	}
+	pb(a, b);
+}
 
 void	sort_three(t_stack *a)
 {
@@ -39,31 +59,15 @@ void	sort_three(t_stack *a)
 }
 
 void	sort_five(t_stack *a, t_stack *b)
-{
-	while (a->i[0] + a->i[1] != 9 && a->i[0] + a->i[1] != 3)
-	{
-		if (a->i[0] > a->i[1])
-			ra(a);
-		else
-		{
-			sa(a);
-			ra(a);
-		}
-	}
-	if (a->i[0] == 2 || a->i[0] == 5)
-		sa(a);
-	if (check_stack_ordered(a))
-		return ;
-	pb(a, b);
-	pb(a, b);
+{	
+	int	i;
+
+	i = 0;
+	while (a->n != 3)
+		search_i(a, b, ++i);
 	sort_three(a);
-	pa(a, b);
-	pa(a, b);
-	if (a->i[0] == 4)
-	{
-		ra(a);
-		ra(a);
-	}
+	while (b->n != 0)
+		pa(a, b);
 }
 
 void	sort_bits(t_stack *a, t_stack *b, int bit)

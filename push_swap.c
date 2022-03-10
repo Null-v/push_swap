@@ -6,7 +6,7 @@
 /*   By: edi-marc <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/28 14:47:46 by edi-marc          #+#    #+#             */
-/*   Updated: 2022/02/28 15:28:50 by edi-marc         ###   ########.fr       */
+/*   Updated: 2022/03/08 22:25:41 by edi-marc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,25 +25,24 @@ int	check_stack_ordered(t_stack *a)
 
 int	check_stack_valid(t_stack *a)
 {
-	int	n;
+	int	count;
 	int	i;
 	int	j;
-	int	nb;
 
 	if (a->n == 1 && a->arr[0] == 0)
 		return (1);
-	n = a->n;
-	j = 1;
-	while (n-- > 0)
+	count = a->n;
+	i = 0;
+	while (i < count -1)
 	{
-		nb = a->arr[j - 1];
-		i = j;
-		while (nb != a->arr[i] && n-- > 1)
-			i++;
-		if (nb == a->arr[i] && i != 0)
-			return (0);
-		j++;
-		n = a->n - j;
+		j = i + 1;
+		while (j < count)
+		{
+			if (a->arr[i] == a->arr[j])
+				return (0);
+			j++;
+		}
+		i++;
 	}
 	return (1);
 }
@@ -85,9 +84,9 @@ int	main(int ac, char **av)
 		return (-1);
 	else if (!read_stack(av, &a))
 	{
-		ft_putendl("Error");
+		ft_putendl_fd("Error", 2);
 		free_stacks(&a, &b);
-		return (-1);
+		exit (EXIT_FAILURE);
 	}
 	else if (check_stack_ordered(&a))
 	{

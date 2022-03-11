@@ -16,6 +16,8 @@ Using Bubble sort to order the stack, then simplify the numbers, assigning an in
 Now order the stack using the indices, instead of the real numbers, using Radix sort.
 Note that under 6 elements , the program uses a different approach and not the Radix, because it goes over the maximum number of instrtuctions permitted.
 
+You can visualize the moves of the program, simply installing this [visualizer](https://github.com/o-reo/push_swap_visualizer)
+
 ### Issues found
 
 - Need to handle malloc failures;

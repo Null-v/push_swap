@@ -20,4 +20,7 @@ Note that under 6 elements , the program uses a different approach and not the R
 
 - Need to handle malloc failures;
 - Fix the atoi and the function for input validation;
-  Some wrong input are permitted, ex.: ./push_swap -+- 1 -2
+  Some wrong input are permitted, ex.:
+  ```
+  ./push_swap -+- 1 -2
+  ```
